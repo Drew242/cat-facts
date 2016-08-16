@@ -1,0 +1,32 @@
+{
+  "name": "cat-facts",
+  "version": "1.0.0",
+  "description": "Welcome to *Cat Facts* ======================",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drew242/cat-facts.git"
+  },
+  "author": "Drew Conly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Drew242/cat-facts/issues"
+  },
+  "homepage": "https://github.com/Drew242/cat-facts#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.2",
+    "client-sessions": "^0.7.0",
+    "colors": "^1.1.2",
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.9",
+    "morgan": "^1.7.0",
+    "sessions": "0.0.2-7"
+  }
+}
