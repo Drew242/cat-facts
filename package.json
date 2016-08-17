@@ -27,6 +27,7 @@
     "express": "^4.14.0",
     "mongoose": "^4.5.9",
     "morgan": "^1.7.0",
-    "sessions": "0.0.2-7"
+    "sessions": "0.0.2-7",
+    "twilio": "^2.9.2"
   }
 }

@@ -9,7 +9,33 @@ var express    = require('express'),
     sessions   = require('client-sessions'), // encrypted cookies!
     port       = process.env.PORT || 1337,
     Routes     = require('./routes'),
-    app        = express();
+    app        = express(),
+    twilio     = require('twilio'),
+    client     = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+
+var testing = client.sendMessage({
+  to: '+17192169290',
+  from: process.env.TWILIO_NUMBER,
+  body: 'Hello from yo app'
+}, (err,result)=>{
+  console.log(err,result)
+});
+
+ // var testing = client.messages.create({
+ //    body: 'It is working',
+ //    to: '+17192169290',
+ //    from: process.env.TWILIO_NUMBER
+ //    // mediaUrl: 'http://www.yourserver.com/someimage.png'
+ //  }, function(err, data) {
+ //    if (err) {
+ //      console.error('Could not notify administrator');
+ //      console.error(err);
+ //    } else {
+ //      console.log('Administrator notified');
+ //    }
+ //  });
+
+console.log(testing);
 
 app.use(logger('dev'));
 app.use(sessions({
