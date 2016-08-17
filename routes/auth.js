@@ -13,13 +13,15 @@ var User = require('../models/user'),
 
 module.exports = {
     render: (req, res) => { // render the login page
-        res.render('auth.html');
+        res.render('index.html');
     },
     logout: (req, res) => {
         req.session.user = null;
         res.redirect('/login');
     },
     login: (req, res) => { // form post submission
+      console.log(req.body);
+      console.log(res.body);
         User.findOne({
             email: req.body.email
         }, (err, user) => {

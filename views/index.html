@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='app.auth'>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <meta name="theme-color" content="#2196F3">
     <title>Cat Facts</title>
 
-    <!-- jQuery -->
-    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <!-- Angular & jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="/js/auth.js"></script>
 
     <!-- CSS  -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" type='text/css' rel='stylesheet'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" type='text/css' rel='stylesheet'>
     <link href="css/style.css" type="text/css" rel="stylesheet">
 </head>
-<body id="top" class="scrollspy">
+<body id="top" class="scrollspy" ng-controller="app.auth.controller as auth">
 
 <!-- Pre Loader -->
 <div id="loader-wrapper">
@@ -253,21 +255,21 @@
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <form class="col s12" action="login.php" method="post">
+                <form class="col s12" ng-submit="auth.login.submit($event)">
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="mdi-action-account-circle prefix white-text"></i>
-                            <input id="icon_prefix" name="name" type="text" class="validate white-text">
-                            <label for="icon_prefix" class="white-text">Username</label>
+                            <input id="icon_prefix" name="name" type="text" class="validate white-text" ng-model="auth.payload.name">
+                            <label for="icon_prefix" class="white-text">Name</label>
                         </div>
                         <div class="input-field col s6">
                             <i class="mdi-communication-email prefix white-text"></i>
-                            <input id="icon_email" name="email" type="email" class="validate white-text">
+                            <input id="icon_email" name="email" type="email" class="validate white-text" ng-model="auth.payload.email">
                             <label for="icon_email" class="white-text">Email</label>
                         </div>
                         <div class="input-field col s12">
                             <i class="mdi-editor-mode-edit prefix white-text"></i>
-                            <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
+                            <input id="icon_prefix2" name="password" class="validate white-text" type="password" ng-model="auth.payload.password"></textarea>
                             <label for="icon_prefix2" class="white-text">Password</label>
                         </div>
                         <div class="col offset-s7 s5">

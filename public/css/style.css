@@ -21,6 +21,10 @@
     -webkit-box-shadow:none !important;
 }
 
+#purrfect {
+  max-width: 25%;
+}
+
 .text_h {
     padding: 15% 0;
     font-size: 6.0em;
@@ -253,6 +257,20 @@ nav a.button-collapse {
     max-height: 400px;
 }
 
+.dashboard-container {
+  padding: 2%;
+}
+
+.purrfect {
+  text-align: center;
+}
+
 footer.page-footer {
     margin-top: 0px !important;
+}
+
+footer.dashboard-footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }

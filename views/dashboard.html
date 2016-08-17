@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="theme-color" content="#2196F3">
+    <title>Cat Facts</title>
+
+    <!-- Angular & jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- CSS  -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" type='text/css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" type='text/css' rel='stylesheet'>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body id="top" class="scrollspy">
+
+<!-- Pre Loader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
+
+<!--Navigation-->
+ <div class="navbar-fixed">
+    <nav id="nav_f" class="default_color" role="navigation">
+        <div class="container">
+            <div class="nav-wrapper">
+            <a href="#" id="logo-container" class="brand-logo">Cat Facts</a>
+            <ul class='right hide-on-med-and-down'>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container dashboard-container">
+  <h2 class="header text_b">Welcome to Cat Facts HQ </h2>
+  <p>This is where you'll enter your soon-to-be BFF's phone number so that they
+     too can learn about cats through text!</p>
+  <div class="purrfect">
+     <img id='purrfect' src="img/purrfect.jpg">
+  </div>
+</div>
+
+<footer class="page-footer default_color dashboard-footer">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="mdi-action-account-circle prefix white-text"></i>
+        <input name="name" type="text" class="validate white-text">
+        <label for="icon_prefix" class="white-text">Name</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="mdi-communication-email prefix white-text"></i>
+        <input name="phoneNumber" type="email" class="validate white-text">
+        <label for="icon_email" class="white-text">Phone Number</label>
+      </div>
+      <div class="col offset-s7 s5">
+        <button class="btn waves-effect waves-light red darken-1" type="submit">Enroll
+          <i class="mdi-content-send right white-text"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="footer-copyright default_color">
+      <div class="container">
+          API's: <a class="white-text" href="https://catfacts-api.appspot.com/">Cat Facts</a>
+          and <a class="white-text" href="https://www.twilio.com/sms/api">Twilio</a>
+      </div>
+  </div>
+</footer>
+
+<!--  Scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="js/init.js"></script>
+
+</body>
+</html>

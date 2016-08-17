@@ -1,4 +1,4 @@
-const SALTY_BITS = 10; // strength of your password encryption, 10 is usually more than enough
+const CONSTANT_VAR = 10; // strength of your password encryption, 10 is usually more than enough
 
 var mongoose = require('mongoose'),
     // bcrypt = require('bcrypt') // sudo apt-get install bcrypt [ run update first, thanks Juliano ;) ] USE THIS FOR PRODUCTION
@@ -22,7 +22,7 @@ UserSchema.pre('save', function(next) { // don't use an arrow function here, we 
         return next();
     }
     // generate a salt value to encrypt our password
-    bcrypt.genSalt(SALTY_BITS, (saltErr, salt) => { // used to guarentee uniqueness
+    bcrypt.genSalt(CONSTANT_VAR, (saltErr, salt) => { // used to guarentee uniqueness
         if(saltErr) {
             return next(saltErr);
         }

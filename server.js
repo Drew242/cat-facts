@@ -1,15 +1,15 @@
 require('colors');
 
-var express = require('express'),
+var express    = require('express'),
     bodyParser = require('body-parser'),
-    path = require('path'),
-    logger = require('morgan'),
-    ejs = require('ejs'),
-    mongoose = require('mongoose'),
-    sessions = require('client-sessions'), // encrypted cookies!
-    port = process.env.PORT || 1337,
-    Routes = require('./routes'),
-    app = express();
+    path       = require('path'),
+    logger     = require('morgan'),
+    ejs        = require('ejs'),
+    mongoose   = require('mongoose'),
+    sessions   = require('client-sessions'), // encrypted cookies!
+    port       = process.env.PORT || 1337,
+    Routes     = require('./routes'),
+    app        = express();
 
 app.use(logger('dev'));
 app.use(sessions({
@@ -30,11 +30,11 @@ app.post('*', bodyParser.json(), bodyParser.urlencoded({ extended: true }));
 app.set('view engine','html'); // allows us to specify the default extension for the files in the views folder
 app.engine('html', ejs.renderFile); // this is the function that binds to res.render
 
-mongoose.connect('mongodb://localhost/mean-auth', (mongooseErr) => {
+mongoose.connect('mongodb://localhost/cat-facts', (mongooseErr) => {
     if( mongooseErr ) {
         console.error('#ERROR#'.red,'Could not initialize mongoose!', mongooseErr);
     } else {
-        console.info('Mongoose initilized!'.green.bold);
+        console.info('Mongoose initialized!'.green.bold);
     }
 });
 
