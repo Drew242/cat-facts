@@ -9,11 +9,16 @@
 
     var twilio = this;
 
+    twilio.footerHeight = $('.dashboard-footer').height();
+    console.log(twilio.footerHeight);
+
     twilio.payload = {
       // this will be the name and phone number for the SMS
       // name (ng-model)
       // phoneNumber (ng-model)
     }
+
+    twilio.message = '';
 
     twilio.CatFact = {
 
@@ -31,7 +36,9 @@
       },
       success: function(res) {
         console.log('Message sent Amigo', res);
-        location.href = '/dashboard';
+        var name = twilio.payload.name;
+        twilio.payload = {};
+        twilio.message = `${name} should be receiving the message shortly ;)`
       },
       error: function(err) {
         console.log(err);

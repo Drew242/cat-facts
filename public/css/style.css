@@ -259,10 +259,16 @@ nav a.button-collapse {
 
 .dashboard-container {
   padding: 2%;
+  overflow: auto;
 }
 
 .purrfect {
   text-align: center;
+}
+
+.message {
+  color: green;
+  font-size: 2em;
 }
 
 footer.page-footer {

@@ -41,11 +41,12 @@
     </nav>
 </div>
 
-<div class="container dashboard-container">
+<div class="container dashboard-container" style=" margin-bottom: {{ twilio.footerHeight }}px ">
   <h2 class="header text_b">Welcome to Cat Facts HQ </h2>
   <p>This is where you'll enter your soon-to-be BFF's phone number so that they
      too can learn about cats through text!</p>
   <div class="purrfect">
+    <h3 ng-class="{'message': twilio.message}">{{ twilio.message }}</h3>
      <img id='purrfect' src="img/purrfect.jpg">
   </div>
 </div>
@@ -55,16 +56,17 @@
     <div class="row">
       <div class="input-field col s6">
         <i class="mdi-action-account-circle prefix white-text"></i>
-        <input name="name" type="text" class="validate white-text" ng-model="twilio.payload.name">
+        <input name="name" autocomplete='off' type="text" class="validate white-text" ng-model="twilio.payload.name">
         <label for="icon_prefix" class="white-text">Name</label>
       </div>
       <div class="input-field col s6">
         <i class="mdi-communication-email prefix white-text"></i>
-        <input name="phoneNumber" type="text" class="validate white-text" ng-model="twilio.payload.phoneNumber">
+        <input name="phoneNumber" autocomplete='off' type="text" class="validate white-text" ng-model="twilio.payload.phoneNumber">
         <label for="icon_email" class="white-text">Phone Number</label>
       </div>
       <div class="col offset-s7 s5">
-        <button class="btn waves-effect waves-light red darken-1" type="submit">Enroll
+        <button class="btn waves-effect waves-light red darken-1" type="submit">
+          Send Cat Fact!
           <i class="mdi-content-send right white-text"></i>
         </button>
       </div>
