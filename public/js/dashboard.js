@@ -15,14 +15,23 @@
       // phoneNumber (ng-model)
     }
 
-    twilio.sendCatFact = {
+    twilio.CatFact = {
+
+      getCatFact: function($event) {
+        $http.post('/getCatFact')
+          .then(function(response) {
+            twilio.payload.factOfTheDay = response;
+            twilio.CatFact.sendCatFact($event);
+          });
+      },
 
       sendCatFact: function($event) {
         $http.post('/sendCatFact', twilio.payload)
-          .then(twilio.sendCatFact.success, twilio.sendCatFact.error);
+          .then(twilio.CatFact.success, twilio.CatFact.error);
       },
       success: function(res) {
         console.log('Message sent Amigo', res);
+        location.href = '/dashboard';
       },
       error: function(err) {
         console.log(err);

@@ -1,5 +1,6 @@
 var Auth   = require('./auth')
 var Twilio = require('./twilio')
+var CatFactAPI = require('./catfact')
 
 module.exports = (app) => {
     app.get('/', (req,res) => {
@@ -17,5 +18,6 @@ module.exports = (app) => {
         res.render('dashboard.html', req.session);
     })
 
+    app.post('/getCatFact', CatFactAPI.getCatFact);
     app.post('/sendCatFact', Twilio.sendCatFact);
 }
