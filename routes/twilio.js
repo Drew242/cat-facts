@@ -1,15 +1,18 @@
-// Twilio Credentials
-var accountSid   = process.env.TWILIO_ACCOUNT_SID,
-    authToken    = process.env.TWILIO_AUTH_TOKEN,
-    twilioNumber = process.env.TWILIO_NUMBER;
-
 //require the Twilio module and create a REST client
-var client = require('twilio')(accountSid, authToken);
+var client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
-client.messages.create({
-        to: "+17192169290",
-        from: twilioNumber,
-        body: "Twilio works sometimes ",
-}, function(err, message) {
- console.log(message.sid);
-});
+module.exports = {
+
+  sendCatFact: (req, res) => {
+    console.log(req.body.phoneNumber);
+    console.log(res.body);
+    // client.messages.create({
+    //   to: req.body.phoneNumber,
+    //   from: process.env.TWILIO_NUMBER,
+    //   body: `Well hey ${req.body.name}, Welcome to Cat Facts! Me-Woooow`,
+    // }, function(err, message) {
+    //   console.log(err);
+    // });
+  }
+
+}

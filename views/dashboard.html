@@ -51,16 +51,16 @@
 </div>
 
 <footer class="page-footer default_color dashboard-footer">
-  <form class="col s12">
+  <form class="col s12" ng-submit="twilio.sendCatFact.sendCatFact($event)">
     <div class="row">
       <div class="input-field col s6">
         <i class="mdi-action-account-circle prefix white-text"></i>
-        <input name="name" type="text" class="validate white-text">
+        <input name="name" type="text" class="validate white-text" ng-model="twilio.payload.name">
         <label for="icon_prefix" class="white-text">Name</label>
       </div>
       <div class="input-field col s6">
         <i class="mdi-communication-email prefix white-text"></i>
-        <input name="phoneNumber" type="email" class="validate white-text">
+        <input name="phoneNumber" type="text" class="validate white-text" ng-model="twilio.payload.phoneNumber">
         <label for="icon_email" class="white-text">Phone Number</label>
       </div>
       <div class="col offset-s7 s5">
