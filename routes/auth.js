@@ -20,8 +20,8 @@ module.exports = {
         res.redirect('/login');
     },
     login: (req, res) => { // form post submission
-      console.log(req.body);
-      console.log(res.body);
+      // console.log(req.body);
+      // console.log(res.body);
         User.findOne({
             email: req.body.email
         }, (err, user) => {
@@ -34,7 +34,7 @@ module.exports = {
                 console.warn('No user found!'.yellow);
                 res.status(403).json(errors.login);
             } else {
-                console.info('auth.login.user', user);
+                // console.info('auth.login.user', user);
 
                 // at this point, user.password is hashed!
                 bcrypt.compare(req.body.password, user.password, (bcryptErr, matched) => {
